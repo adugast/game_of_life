@@ -10,6 +10,8 @@ Launch the game of life:
 $>./gol -s
 ```
 
+-s option use to dump statistic about the game of life universe
+
 ## Output:
 
 ```
