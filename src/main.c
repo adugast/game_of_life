@@ -33,7 +33,7 @@ static void game_of_life(gol_t *hdl)
             unsigned int nb_cells = count_neighbors_cells(hdl, x, y);
             // condition to kill the cell
             if (nb_cells < 2 || nb_cells > 3) {
-                if (hdl->map[y][x] == '*')
+                if (hdl->map[y][x] == hdl->tok)
                     hdl->current_cells_nbr--;
                 hdl->map[y][x] = ' ';
             }
@@ -53,6 +53,8 @@ static int gol(struct argument *args)
 {
     // retrieve a gol handler with width and height of the map
     gol_t *hdl = gol_init_map_handler(args->width_m, args->height_m);
+    if (hdl == NULL)
+        return -1;
 
     // fill the map with nbr of characters at random position
     gol_fill_map(hdl, args->nbcells_m, args->tok_m);
@@ -68,8 +70,9 @@ static int gol(struct argument *args)
 
         // print info about the universe
         if (args->statistics_m == true) {
+            printf("map: %dx%d nb_max_cells: %d\n", hdl->width, hdl->height, hdl->width * hdl->height);
             printf("timelife:%d/%d\n", time + 1, args->lifetime_m);
-            printf("freqence:%d iteration/sec\n", 1000000 / args->sleep_m);
+            printf("frequency:%d iteration/sec\n", 1000000 / args->sleep_m); /* doe not work well */
             printf("nbr of cells in the universe:%d\n", hdl->current_cells_nbr);
             // add nbr of died cells ?
             // add nbr of born cells ?

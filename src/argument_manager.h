@@ -6,13 +6,13 @@
 
 
 struct argument {
-    unsigned int width_m; //
-    unsigned int height_m; // height of the map
-    unsigned int nbcells_m; // nbr of cells present at the begin of the universe
+    unsigned int width_m;   // map width
+    unsigned int height_m;  // map height
+    unsigned int nbcells_m; // cells number present at the begin of the universe
     unsigned int sleep_m;
-    unsigned int lifetime_m; //
-    bool statistics_m; // boolean to activate statistics dump
-    char tok_m; // char that represents the cell
+    unsigned int lifetime_m;
+    bool statistics_m;          // activate dump statistics
+    char tok_m;                 // character representing one cell
 };
 
 
@@ -20,3 +20,4 @@ void argument_manager(int argc, char **argv, struct argument *args);
 
 
 #endif /* __ARGUMENT_MANAGER_H__ */
+
