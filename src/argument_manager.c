@@ -25,9 +25,9 @@ static void print_version()
 {
     printf("gol: version \?.\?.\?\?(\?)-release\n");
     printf("Conway's Game of Life\n");
-    printf("Copyright (C) 2018 pestbuns\n");
+    printf("Copyright (C) 2018 adugast\n");
     printf("MIT License: <https://opensource.org/licenses/MIT>\n");
-    printf("Git Repository: <https://github.com/pestbuns/gol>\n");
+    printf("Git Repository: <https://github.com/adugast/gol>\n");
     printf("\n");
     printf("This is free software; you are free to change and redistribute it.\n");
     printf("There is NO WARRANTY, to the extent permitted by law.\n");
